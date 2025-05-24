@@ -1,0 +1,78 @@
+﻿@using NewBlogApp.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model RegisterView
+@{
+
+    Layout = "_Layout";
+}
+
+<div class="col-12">
+    <div class="bg-white p-4">
+
+        <h4>Kullanıcı Kayıt Formu</h4>
+
+        <form action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+            <div class="mb-3">
+
+                <label asp-for="UserName" class="form-label">Kullanıcı Ad</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName"class="text-danger"></span>
+
+
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Name" class="form-label">Ad Soyad</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+
+
+            </div>
+            
+               <div class="mb-3">
+
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+              </div>
+
+               <div class="mb-3">
+
+                <label asp-for="Password" class="form-label">Şifre</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+
+               </div>
+
+
+            <div class="mb-3">
+
+                <label asp-for="ConfirmPassword" class="form-label">Şifre Tekrar</label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            </div>
+               <div class="mb-3">
+
+                <button class="btn btn-outline-primary">Kayıt Ol</button>
+
+               </div>
+
+            
+        </form>
+
+
+    </div>
+  
+
+
+
+
+
+</div>

@@ -1,0 +1,69 @@
+﻿@using NewBlogApp.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PostsCreateViewModel
+@{
+
+    Layout = "_Layout";
+}
+
+<div class="col-12">
+    <div class="bg-white p-4">
+
+        <h4>Post Ekleme Formu</h4>
+
+        @if (User.Identity!.IsAuthenticated)
+        {
+             <form action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+                <div class="mb-3">
+                    <label asp-for="Url" class="form-label"></label>
+                    <input asp-for="Url" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+            <div class="mb-3">
+                <label asp-for="Content" class="form-label"></label>
+                <textarea  asp-for="Content" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+         
+
+            <button type="submit" class="btn btn-outline-primary">Post Ekle</button>
+            
+
+
+          </form>
+
+        }
+        else{
+
+            <div class="alert alert-danger">
+                <strong>Hata!</strong> Post eklemek için giriş yapmalısınız.
+            </div>
+        }
+        
+
+       
+
+    </div>
+
+
+
+
+
+
+</div>

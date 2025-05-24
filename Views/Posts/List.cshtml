@@ -1,0 +1,83 @@
+﻿@using NewBlogApp.Entitiy
+
+@model List<Post>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+
+
+    <div class="col-12">
+        <h2>Post Listeleri</h2>
+        
+        <div class="mb-3">
+          <a href="/posts/create" class="btn btn-outline-primary">Yeni Post</a>
+
+
+        </div>
+
+        
+
+        @if (User.Identity!.IsAuthenticated)
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th style="width:200px">Resim</th>
+                        <th>Başlık</th>
+                        <th>Yayında Mı?</th>
+                        <th>İşlemler</th>
+                        
+                       
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td><img src="/img/@item.Image" class="img-fluid" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.IsActive</td>
+
+                            <td>
+
+
+                                <a href="/Posts/Edit/@item.PostId" class="btn btn-outline-primary">Düzenle</a>
+                                <a href="/Posts/Delete/@item.PostId" class="btn btn-outline-danger">Sil</a>
+
+
+                            </td>
+                        </tr>
+
+                    }
+
+
+                </tbody>
+
+
+            </table>
+
+
+        }
+        else
+        {
+            <div class="alert alert-danger">
+                <strong>Hata!</strong> Postlarınızı görmek için giriş yapmalısınız.
+            </div>
+        }
+
+    </div>
+
+</div>
+
+
+
+

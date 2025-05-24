@@ -1,0 +1,49 @@
+﻿@using NewBlogApp.Entitiy;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Post
+@{
+
+    Layout = "_Layout";
+}
+
+<div class="col-12">  
+    <div class="bg-white p-4">
+
+       
+        <form action="Delete" method="post">
+
+            <div class="my-3">
+
+
+                <h4>@Model.Title isimli postu silmek istediğinize emin misiniz?</h4>
+
+            </div>
+            
+
+
+            <div class="my-3">
+
+                <input type="hidden" asp-for="PostId" />
+
+                <button type="submit" class="btn btn-outline-danger">Evet</button>
+
+                <a href="/Posts/List" class="btn btn-outline-primary">Hayır</a>
+
+
+            </div>
+            
+         
+
+        </form>
+
+            
+
+
+        
+       
+
+
+   </div>
+
+
+</div>

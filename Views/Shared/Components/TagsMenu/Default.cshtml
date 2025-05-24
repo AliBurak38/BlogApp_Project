@@ -1,0 +1,29 @@
+﻿@using NewBlogApp.Entitiy;
+@model List<Tag>
+
+
+
+<div class="card mb-3">
+    <div class="card-header">
+
+        <h5 class="card-title mb-0">Etiketler</h5>
+
+    </div>
+    <div class="card-body">
+
+        <ul class="list-inline d-flex flex-wrap gap-2">
+
+            @foreach (var tag in Model)
+            {
+                <li class="list-inline-item">
+                    <a href="/Posts/Tag/@tag.Url" class="btn btn-outline-primary btn-sm">@tag.Text</a>
+                </li>
+
+
+            }
+
+
+        </ul>
+
+    </div>
+</div>
